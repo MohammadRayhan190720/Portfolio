@@ -1,6 +1,5 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
-import olova from "../assets/images/olova.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const MacOsButtons = () => (
@@ -22,7 +21,6 @@ const ProjectShowcase = () => {
         github: "https://github.com/olovajs/olova",
         demo: "https://olova.js.org/",
       },
-      image: olova,
       featured: true,
     },
   ];

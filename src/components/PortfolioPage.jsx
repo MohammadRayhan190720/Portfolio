@@ -1,5 +1,5 @@
 import React from "react";
-import profileImage from "../assets/images/profile.png";
+import profileImage from "../assets/images/profile.jpg";
 
 const AboutMe = () => {
   return (
@@ -8,20 +8,17 @@ const AboutMe = () => {
         <div className="content max-w-2xl">
           <h2 className="text-[#4ECCA3] text-2xl font-bold mb-6">WHO I AM?</h2>
           <p className="text-lg leading-relaxed">
-            Hello! I’m Nazmul Hossain, a passionate JavaScript developer
-            specializing in creating innovative web solutions and user-friendly
-            interfaces. As the creator of the{" "}
-            <a className="text-[#4ECCA3] px-2" href="https://olova.js.org/">
-              OlovaJS
-            </a>{" "}
-            UI Framework, I’m dedicated to simplifying development workflows and
-            pushing the boundaries of JavaScript frameworks. My focus is on
-            making web development faster, easier, and accessible to all
-            developers. Currently, I’m expanding into backend development to
-            grow as a full-stack developer and create seamless, robust web
-            applications. I’m a lifelong learner and innovator, driven by a
-            desire to contribute to the developer community with new ideas and
-            tools that deliver real value.
+            I am a passionate and skilled developer, constantly pushing
+            boundaries in web development. As a JavaScript enthusiast 🚀, I
+            specialize in the MERN stack (MongoDB, Express.js, React, Node.js)
+            and seamlessly integrate technologies like Tailwind CSS, DaisyUI,
+            Firebase, and Axios into My projects. My aim to create modern,
+            scalable, and user-friendly web systems to make a positive impact on
+            the world. My creative portfolio includes projects like CineVerse,
+            Gadget Haven, and Food For All, reflecting my ability to blend
+            functionality with aesthetics. Always eager to learn, I am diving
+            deeper into Node.js, Vue.js, and AngularJS, aiming to master them
+            all.
           </p>
         </div>
         <div className="image-container">
