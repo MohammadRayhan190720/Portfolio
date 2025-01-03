@@ -158,7 +158,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-### 🤝 Contributing
+<!-- ### 🤝 Contributing
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -168,5 +168,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-<div align="center"> Made with ❤️ by Nazmul Hossain </div>
+<div align="center"> Made with ❤️ by Nazmul Hossain </div> -->
 
