@@ -1,51 +1,37 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Send, Phone, MapPin, Mail } from "lucide-react";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
 
-  const [status, setStatus] = useState(null);
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit =  (e) => {
     e.preventDefault();
 
-    // Create a new FormData object to send to Web3Forms API
-    const form = new FormData();
-    form.append("access_key", "90f4b8af-e590-42b0-beaf-10b18f66a703"); // Replace with your Web3Forms access key
-    form.append("name", formData.name);
-    form.append("email", formData.email);
-    form.append("subject", formData.subject || "New Contact Form Submission");
-    form.append("message", formData.message);
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const subject = form.subject.value;
+    const message = form.message.value;
 
-    try {
-      // Send form data to Web3Forms API
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: form,
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-      } else {
-        setStatus(result.message || "There was an error sending your message.");
-      }
-    } catch (error) {
-      setStatus("An error occurred. Please try again.");
-      console.error("Error:", error);
+    const formData = {
+      name,email,subject,message
     }
+    axios.post("http://localhost:5000/message", formData)
+    .then((res) => {
+      if(res.data.insertedId){
+        Swal.fire({
+          title: "Message sent",
+          text: "Your nessage has been successfully inserted",
+          icon: "success",
+        });
+      }
+    });
+
+
+
   };
 
   return (
@@ -71,7 +57,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-400">olovajs@gmail.com</p>
+                    <p className="text-gray-400">rafirayhan260@gmail.com</p>
                   </div>
                 </div>
 
@@ -81,7 +67,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Location</h3>
-                    <p className="text-gray-400">Laxmipure, Natore 6400</p>
+                    <p className="text-gray-400">Dhaka,Bangladesh</p>
                   </div>
                 </div>
               </div>
@@ -94,48 +80,39 @@ export default function Contact() {
                   <div>
                     <input
                       type="text"
+                      name="name"
                       placeholder="Your Name"
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-blue-500 focus:outline-none transition-colors"
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
+                     
                     />
                   </div>
 
                   <div>
                     <input
                       type="email"
+                      name="email"
                       placeholder="Your Email"
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-blue-500 focus:outline-none transition-colors"
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
+                     
                     />
                   </div>
 
                   <div>
                     <input
                       type="text"
+                      name="subject"
                       placeholder="Subject"
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-blue-500 focus:outline-none transition-colors"
-                      value={formData.subject}
-                      onChange={(e) =>
-                        setFormData({ ...formData, subject: e.target.value })
-                      }
+                     
                     />
                   </div>
 
                   <div>
                     <textarea
                       placeholder="Your Message"
+                      name="message"
                       rows="4"
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-blue-500 focus:outline-none transition-colors resize-none"
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
                     ></textarea>
                   </div>
                 </div>
