@@ -24,7 +24,7 @@ export default function Contact() {
       if(res.data.insertedId){
         Swal.fire({
           title: "Message sent",
-          text: "Your nessage has been successfully inserted",
+          text: "Your message has been successfully inserted",
           icon: "success",
         });
       }
