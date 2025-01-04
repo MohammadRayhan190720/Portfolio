@@ -7,6 +7,7 @@ import PortfolioPage from "./PortfolioPage";
 import SparklesText from "./ui/sparkles-text";
 import { FlipWords } from "./ui/flip-words";
 import cv from '../assets/My-Cv.pdf';
+import Footer from "./Footer";
 
 // AnimatedGrid Component
 const AnimatedGrid = () => {
@@ -218,6 +219,7 @@ const profile = {
           </div>
         </section>
         <PortfolioPage />
+        <Footer></Footer>
       </main>
     </>
   );
