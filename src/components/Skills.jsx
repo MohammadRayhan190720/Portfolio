@@ -1,8 +1,9 @@
-import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "./globe";
 import { Code2, Paintbrush, Database, Layout, Cpu, Cloud } from "lucide-react";
+
+import PropTypes from 'prop-types';
 
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
   <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/80 transition-all duration-300">
@@ -33,10 +34,10 @@ const SkillsSection = () => {
       title: "Frontend Development",
       color: "text-blue-400",
       skills: [
+        "Javascript",
         "React",
-        "Next.js",
-        "TypeScript",
         "Tailwind CSS",
+        "Bootstrap5",
         "HTML5",
         "CSS3",
       ],
@@ -47,38 +48,33 @@ const SkillsSection = () => {
       color: "text-green-400",
       skills: [
         "Node.js",
-        "Python",
-        "PostgreSQL",
+        "Express Js",
         "MongoDB",
         "REST APIs",
-        "GraphQL",
       ],
     },
-    {
-      icon: Layout,
-      title: "UI/UX Design",
-      color: "text-purple-400",
-      skills: ["Figma", "Responsive Design", "Wireframing", "Prototyping"],
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      color: "text-orange-400",
-      skills: ["AWS", "Docker", "CI/CD", "Kubernetes", "Git", "Linux"],
-    },
+    // {
+    //   icon: Layout,
+    //   title: "UI/UX Design",
+    //   color: "text-purple-400",
+    //   skills: ["Figma", "Responsive Design", "Wireframing", "Prototyping"],
+    // },
+    // {
+    //   icon: Cloud,
+    //   title: "Cloud & DevOps",
+    //   color: "text-orange-400",
+    //   skills: ["AWS", "Docker", "CI/CD", "Kubernetes", "Git", "Linux"],
+    // },
     {
       icon: Cpu,
       title: "Tools & Technologies",
       color: "text-pink-400",
       skills: [
         "VS Code",
-        "Jest",
-        "Webpack",
-        "Redux",
         "Firebase",
         "Vercel",
         "Vite",
-        "Vim",
+        "Git and Github",
       ],
     },
     {
@@ -88,8 +84,8 @@ const SkillsSection = () => {
       skills: [
         "UI Animation",
         "SVG Animation",
-        "3D Modeling",
         "Motion Graphics",
+        'Responsive Design'
       ],
     },
   ];
@@ -114,6 +110,13 @@ const SkillsSection = () => {
       </section>
     </main>
   );
+};
+
+SkillCard.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  title: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default SkillsSection;

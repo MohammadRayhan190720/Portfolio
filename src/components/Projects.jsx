@@ -1,6 +1,7 @@
-import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import project1 from '../assets/images/image1.png'
+import project2 from '../assets/images/image2.png'
 
 const MacOsButtons = () => (
   <div className="flex gap-2 mb-4">
@@ -11,24 +12,78 @@ const MacOsButtons = () => (
 );
 
 const ProjectShowcase = () => {
-  const projects = [
+  const projects1 = [
     {
-      title: "Olova! A Lightweight JavaScript Library",
+      title: "Food Shareing Website",
       description:
-        "Olova.js is a lightweight JavaScript library for building modern, reactive, and dynamic web applications. It features a simple, component-based architecture, enabling developers to create reusable and interactive UI elements with minimal code and overhead.",
-      tags: ["JavaScript", "Reactive", "Web Development"],
+        "A website that allows users to share food with others. It helps to reduce food wastage and feed the hungry.",
+      tags: [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Tailwind",
+        "Firebase",
+      ],
       links: {
-        github: "https://github.com/olovajs/olova",
-        demo: "https://olova.js.org/",
+        githubClient: "https://github.com/MohammadRayhan190720/Food-Shareing_Website",
+        githubServer:
+          "https://github.com/programming-hero-web-course2/b10a11-server-side-MohammadRayhan190720",
+        demo: "https://food-for-all-15120.web.app/",
+      },
+      featured: true,
+    },
+  ];
+  const projects2 = [
+    {
+      title: "CINEVERSE- A Movie Portal Web Application",
+      description:
+        "CineVerse is a user-friendly movie portal designed for exploring, viewing, and managing movies effortlessly. It features a dynamic dark/light mode toggle, Firebase authentication, and CRUD functionality for adding and managing favorites. Built with React, Tailwind CSS, and MongoDB, it offers a seamless movie discovery experience for all users.",
+      tags: [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Tailwind",
+        "Firebase",
+      ],
+      links: {
+        githubClient:
+          "https://github.com/MohammadRayhan190720/Movie-Portal-website",
+        githubServer:
+          "https://github.com/programming-hero-web-course2/b10-a10-server-side-MohammadRayhan190720",
+        demo: "https://cineverse-movieportal.web.app/",
+      },
+      featured: true,
+    },
+  ];
+  const projects3 = [
+    {
+      title: "Food Shareing Website",
+      description:
+        "A website that allows users to share food with others. It helps to reduce food wastage and feed the hungry.",
+      tags: [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Tailwind",
+        "Firebase",
+      ],
+      links: {
+        githubClient: "https://github.com/MohammadRayhan190720/Food-Shareing_Website",
+        githubServer:
+          "https://github.com/programming-hero-web-course2/b10a11-server-side-MohammadRayhan190720",
+        demo: "https://food-for-all-15120.web.app/",
       },
       featured: true,
     },
   ];
 
   return (
-    <div className="pt-40 min-h-screen bg-[#0f1629] p-8 text-slate-100">
-      <div className="max-w-7xl mx-auto space-y-12">
-        {projects.map((project, index) => (
+    <div className="pt-40 min-h-screen bg-[#0f1629] p-8 text-slate-100 space-y-5 lg:space-y-7">
+      <div className="max-w-7xl mx-auto space-y-12 ">
+        {projects1.map((project, index) => (
           <div
             key={index}
             className="flex flex-col md:flex-row items-center group rounded-lg p-[2px] bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 bg-[length:400%_400%] animate-gradient-xy hover:bg-[length:100%_100%] transition-all duration-700 shadow-lg"
@@ -36,7 +91,7 @@ const ProjectShowcase = () => {
             {/* Image Section */}
             <div className="md:w-1/2 overflow-hidden rounded-lg">
               <img
-                src={project.image}
+                src={project1}
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -58,7 +113,92 @@ const ProjectShowcase = () => {
                   </div>
                   <div className="flex gap-4">
                     <a
-                      href={project.links.github}
+                      href={project.links.githubClient}
+                      className="text-slate-400 hover:text-emerald-400 transition-all duration-300 transform hover:scale-125"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={22} />
+                    </a>
+                    <a
+                      href={project.links.githubServer}
+                      className="text-slate-400 hover:text-emerald-400 transition-all duration-300 transform hover:scale-125"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={22} />
+                    </a>
+                    <a
+                      href={project.links.demo}
+                      className="text-slate-400 hover:text-emerald-400 transition-all duration-300 transform hover:scale-125"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink size={22} />
+                    </a>
+                  </div>
+                </div>
+              </CardHeader>
+
+              <CardContent className="mt-4">
+                <p className="text-slate-300 mb-6 text-lg leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r from-emerald-400 to-cyan-500 text-gray-900 shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
+      </div>
+      <div className="max-w-7xl mx-auto space-y-12 ">
+        {projects2.map((project, index) => (
+          <div
+            key={index}
+            className="flex flex-col md:flex-row items-center group rounded-lg p-[2px] bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 bg-[length:400%_400%] animate-gradient-xy hover:bg-[length:100%_100%] transition-all duration-700 shadow-lg"
+          >
+            {/* Image Section */}
+            <div className="md:w-1/2 overflow-hidden rounded-lg">
+              <img
+                src={project2}
+                alt={project.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Text Section */}
+            <Card className="md:w-1/2 bg-gradient-to-br from-slate-800 to-gray-900 rounded-lg overflow-hidden shadow-md transition-transform duration-500 group-hover:scale-105 group-hover:shadow-2xl p-6">
+              <MacOsButtons />
+
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <div className="text-emerald-400 text-sm font-mono mb-2 tracking-wide uppercase">
+                      Featured Project
+                    </div>
+                    <CardTitle className="text-slate-100 text-3xl font-bold">
+                      {project.title}
+                    </CardTitle>
+                  </div>
+                  <div className="flex gap-4">
+                    <a
+                      href={project.links.githubClient}
+                      className="text-slate-400 hover:text-emerald-400 transition-all duration-300 transform hover:scale-125"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={22} />
+                    </a>
+                    <a
+                      href={project.links.githubServer}
                       className="text-slate-400 hover:text-emerald-400 transition-all duration-300 transform hover:scale-125"
                       target="_blank"
                       rel="noopener noreferrer"

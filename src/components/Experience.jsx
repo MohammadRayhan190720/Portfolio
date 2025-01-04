@@ -1,5 +1,5 @@
-import React from "react";
-import { Code2, Activity, Cpu, Layers, Network, Binary } from "lucide-react";
+import {  Activity, Cpu, Layers, Network, Binary } from "lucide-react";
+import PropTypes from "prop-types";
 
 const ExperienceCard = ({
   title,
@@ -54,30 +54,29 @@ const ExperienceCard = ({
 
 const ExperienceSection = () => {
   const experiences = [
-    {
-      icon: Network,
-      title: "WordPress Developer",
-      company: "Fiverr",
-      period: "2019 - 2020",
-      description:
-        "Worked on developing and customizing WordPress websites for clients globally.",
-    },
+    // {
+    //   icon: Network,
+    //   title: "WordPress Developer",
+    //   company: "Fiverr",
+    //   period: "2019 - 2020",
+    //   description:
+    //     "Worked on developing and customizing WordPress websites for clients globally.",
+    // },
     {
       icon: Layers,
-      title: "Junior Frontend Developer",
-      company: "Sera Programmer",
-      period: "2021 - 2023",
-      description:
-        "Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.",
-    },
-    {
-      icon: Code2,
-      title: "JavaScript Developer",
-      company: "OlovJS (Sera Programmer)",
+      title: "Front-End Developer (Self-Taught & Freelance)",
       period: "2023 - Present",
       description:
-        "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+        "1. Built and deployed multiple projects using HTML, CSS, JavaScript, and modern frameworks like React and Tailwind CSS.\n2. Integrated third-party APIs and tools such as Firebase, Axios, and MongoDB for dynamic, data-driven websites.\n3. Continuously learning and implementing the latest technologies, including Node.js, Express.js, and MERN stack principles.",
     },
+    // {
+    //   icon: Code2,
+    //   title: "JavaScript Developer",
+    //   company: "OlovJS (Sera Programmer)",
+    //   period: "2023 - Present",
+    //   description:
+    //     "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+    // },
   ];
 
   return (
@@ -116,6 +115,13 @@ const ExperienceSection = () => {
       </div>
     </>
   );
+};
+ExperienceCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  period: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  icon: PropTypes.elementType.isRequired,
 };
 
 export default ExperienceSection;

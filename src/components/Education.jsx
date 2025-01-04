@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import EducationLoader from "./ui/EducationLoader";
 import { Star, Award, Calendar } from "lucide-react";
 
@@ -8,15 +8,21 @@ const EducationSection = () => {
   const educationData = [
     {
       degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
+      school: "Changamary Mandrain BL High School",
       mascot: "📘",
-      achievements: ["GPA: 4.89", "Subject: Science"],
+      achievements: ["GPA: 5.00", "Subject: Science"],
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
+      school: "Lalmonirhat Goverment Collage",
       mascot: "📗",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
+      achievements: ["GPA: 5.00", "Subject: Science"],
+    },
+    {
+      degree: "B.Sc in Chemestry",
+      school: "Rangpur Goverment Collage",
+      mascot: "📗",
+      achievements: ["Honours 3rd Year", "Subject: Chemestry"],
     },
   ];
 
